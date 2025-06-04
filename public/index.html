@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light"  data-sidebar-behaviour="fixed" data-navigation-color="inverted" data-is-fluid="true">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>TrackOG Dashboard</title>
+		<link rel="stylesheet" href="https://storage.googleapis.com/trackog_io/theme/css/theme.bundle.css?v=1.0" id="stylesheetLTR">
+		<link rel="stylesheet" href="https://storage.googleapis.com/trackog_io/theme/css/theme.rtl.bundle.css" id="stylesheetRTL">
+
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap">
+		<link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap">
+		
+		<!-- no-JS fallback -->
+		<noscript>
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap">
+		</noscript>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		
+		<script src="https://storage.googleapis.com/trackog_io/theme/theme.js?t=v1"></script>
+		<!-- Favicon -->
+	</head>
+	<body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
+		<!-- THEME CONFIGURATION -->
+		<script src="https://storage.googleapis.com/trackog_io/theme/main.js"></script>
+		<script type="text/javascript">
+			var resizefunc = [];
+			window.user = {
+				_id: '682e1ba80000000000000000',
+				display_id: 1,
+				name: 'Demo user',
+				type: 'admin',
+				region: {
+					currency: 'INR'
+				}
+			};
+			window.org = {
+				_id: '672e1ba80000000000000000',
+				display_id: 1,
+				name: 'Org',
+				type: 'network',
+				region: {
+					currency: 'INR'
+				}
+			}
+			window.pref = {
+				org_id: window.org._id,
+				publishers: {},
+				advertiser: {}
+			}
+		</script>
+
+		<nav id="mainNavbar" class="navbar navbar-vertical navbar-expand-lg scrollbar bg-dark navbar-dark">
+			
+			<!-- Theme configuration (navbar) -->
+			<script src="https://storage.googleapis.com/trackog_io/theme/nav.js"></script>
+
+			<div class="container-fluid">
+				
+				<!-- Brand -->
+				<a class="navbar-brand" href="index.html">
+					<img src="http://demo.trackog.xyz/assets/images/logo-small.svg" class="navbar-brand-img logo-light logo-small" alt="..." width="19" height="25">
+					<img src="http://demo.trackog.xyz/assets/images/logo.svg" class="navbar-brand-img logo-light logo-large" alt="..." width="125" height="25">
+		
+					<img src="http://demo.trackog.xyz/assets/images/logo-dark-small.svg" class="navbar-brand-img logo-dark logo-small" alt="..." width="19" height="25">
+					<img src="http://demo.trackog.xyz/assets/images/logo-dark.svg" class="navbar-brand-img logo-dark logo-large" alt="..." width="125" height="25">
+				</a>
+		
+				<!-- Navbar toggler -->
+				<a href="javascript: void(0);" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#sidenavCollapse" aria-controls="sidenavCollapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</a>
+		
+				<!-- Collapse -->
+				<div class="navbar-collapse collapse show" id="sidenavCollapse" style="">
+				   <!-- Navigation -->
+				   <ul class="navbar-nav mb-lg-7">
+				      <li class="nav-item">
+				         <a class="nav-link active" href="/">
+				            <span>
+				               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home icon-feather">
+				                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+				                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+				               </svg>
+				               Dashboard
+				            </span>
+				         </a>
+				      </li>
+				      <li class="nav-item dropdown">
+				         <a class="nav-link" href="#campaigns" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="campaigns">
+				            <span>
+				               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-database icon-feather">
+				                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+				                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+				                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+				               </svg>
+				               Campaigns
+				            </span>
+				         </a>
+				         <div class="collapse show" id="campaigns" style="">
+				            <ul class="nav flex-column">
+				               <li class="nav-item">
+				                  <a href="/campaigns/all.html" class="nav-link ">
+				                  <span>Campaigns</span>
+				                  </a>
+				               </li>
+				               <li class="nav-item">
+				                  <a href="/campaigns/new.html" class="nav-link ">
+				                  <span>Add New Campaign</span>
+				                  </a>
+				               </li>
+				               <li class="nav-item">
+				                  <a href="/campaigns/affiliate-access.html" class="nav-link ">
+				                  <span>Affiliate Access</span>
+				                  </a>
+				               </li>
+				               <li class="nav-item">
+				                  <a href="/campaigns/creatives.html" class="nav-link ">
+				                  <span>Creatives</span>
+				                  </a>
+				               </li>
+				               <li class="nav-item">
+				                  <a href="/campaigns/coupon-codes.html" class="nav-link ">
+				                  <span>Coupon Codes</span>
+				                  </a>
+				               </li>
+				            </ul>
+				         </div>
+				      </li>
+				      <li class="nav-item dropdown">
+				         <a class="nav-link" href="#reports" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="reports">
+				            <span>
+				               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart icon-feather">
+				                  <line x1="12" y1="20" x2="12" y2="10"></line>
+				                  <line x1="18" y1="20" x2="18" y2="4"></line>
+				                  <line x1="6" y1="20" x2="6" y2="16"></line>
+				               </svg>
+				               Reports
+				            </span>
+				         </a>
+				         <div class="collapse show" id="reports" style="">
+				            <ul class="nav flex-column">
+				               <li class="nav-item">
+				                  <a href="/report/stats.html?dm[]=campaign_name" class="nav-link ">
+				                  <span>Campaign Reports</span>
+				                  </a>
+				               </li>
+				               <li class="nav-item">
+				                  <a href="/report/stats.html?dm[]=publisher_name&amp;dm[]=publisher_id" class="nav-link ">
+				                  <span>Affiliate Reports</span>
+				                  </a>
+				               </li>
+				               <li class="nav-item">
+				                  <a href="/report/stats.html?dm[]=av_name&amp;dm[]=av_id" class="nav-link ">
+				                  <span>Advertiser Reports</span>
+				                  </a>
+				               </li>
+				               <li class="nav-item">
+				                  <a href="/report/stats.html?dm[]=date" class="nav-link ">
+				                  <span>Date wise Reports</span>
+				                  </a>
+				               </li>
+				            </ul>
+				         </div>
+				      </li>
+				      <li class="nav-item dropdown">
+				         <a class="nav-link" href="#affiliates" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="affiliates">
+				            <span>
+				               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user icon-feather">
+				                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+				                  <circle cx="12" cy="7" r="4"></circle>
+				               </svg>
+				               Affiliates
+				            </span>
+				         </a>
+				         <div class="collapse show" id="affiliates" style="">
+				            <ul class="nav flex-column">
+				               <li class="nav-item">
+				                  <a href="/publishers/all" class="nav-link ">
+				                  <span>All Affiliates</span>
+				                  </a>
+				               </li>
+				               <li class="nav-item">
+				                  <a href="/publishers/new" class="nav-link ">
+				                  <span>Add New Affiliates</span>
+				                  </a>
+				               </li>
+				               <li class="nav-item">
+				                  <a href="/publishers/pixels.html" class="nav-link ">
+				                  <span>Postbacks &amp; Pixels</span>
+				                  </a>
+				               </li>
+				               <li class="nav-item">
+				                  <a href="/publishers/custom-fields.html" class="nav-link ">
+				                  <span>Custom Fields</span>
+				                  </a>
+				               </li>
+				               <li class="nav-item">
+				                  <a href="/publishers/tags.html" class="nav-link ">
+				                  <span>Tags</span>
+				                  </a>
+				               </li>
+				            </ul>
+				         </div>
+				      </li>
+				      <li class="nav-item dropdown">
+				         <a class="nav-link" href="#advertisers" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="advertisers">
+				            <span>
+				               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-check icon-feather">
+				                  <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+				                  <circle cx="8.5" cy="7" r="4"></circle>
+				                  <polyline points="17 11 19 13 23 9"></polyline>
+				               </svg>
+				               Advertisers
+				            </span>
+				         </a>
+				         <div class="collapse show" id="advertisers" style="">
+				            <ul class="nav flex-column">
+				               <li class="nav-item">
+				                  <a href="/av/all.html" class="nav-link ">
+				                  <span>All Advertisers</span>
+				                  </a>
+				               </li>
+				               <li class="nav-item">
+				                  <a href="/av/new.html" class="nav-link ">
+				                  <span>Add New Advertiser</span>
+				                  </a>
+				               </li>
+				               <li class="nav-item">
+				                  <a href="/av/custom-fields.html" class="nav-link ">
+				                  <span>Custom Fields</span>
+				                  </a>
+				               </li>
+				               <li class="nav-item">
+				                  <a href="/av/tags.html" class="nav-link ">
+				                  <span>Tags</span>
+				                  </a>
+				               </li>
+				            </ul>
+				         </div>
+				      </li>
+				      <li class="nav-item dropdown">
+				         <a class="nav-link" href="#invoices" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="invoices">
+				            <span>
+				               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card icon-feather">
+				                  <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+				                  <line x1="1" y1="10" x2="23" y2="10"></line>
+				               </svg>
+				               Invoices
+				            </span>
+				         </a>
+				         <div class="collapse show" id="invoices" style="">
+				            <ul class="nav flex-column">
+				               <li class="nav-item">
+				                  <a href="/invoices/dashboard.html" class="nav-link ">
+				                  <span>Dashboard</span>
+				                  </a>
+				               </li>
+				               <li class="nav-item">
+				                  <a href="/invoices/affs.html" class="nav-link ">
+				                  <span>Affiliates</span>
+				                  </a>
+				               </li>
+				               <li class="nav-item">
+				                  <a href="/invoices/avs.html" class="nav-link ">
+				                  <span>Advertiser</span>
+				                  </a>
+				               </li>
+				            </ul>
+				         </div>
+				      </li>
+				      <li class="nav-item">
+				         <a class="nav-link" href="/integrations/hub.html">
+				            <span>
+				               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2 icon-feather">
+				                  <circle cx="18" cy="5" r="3"></circle>
+				                  <circle cx="6" cy="12" r="3"></circle>
+				                  <circle cx="18" cy="19" r="3"></circle>
+				                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+				                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+				               </svg>
+				               Integrations Hub
+				            </span>
+				         </a>
+				      </li>
+				      <li class="nav-item dropdown">
+				         <a class="nav-link" href="#tfopm" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="tfopm">
+				            <span>
+				               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-framer icon-feather">
+				                  <path d="M5 16V9h14V2H5l14 14h-7m-7 0l7 7v-7m-7 0h7"></path>
+				               </svg>
+				               Traffic Optimizations
+				            </span>
+				         </a>
+				         <div class="collapse show" id="tfopm" style="">
+				            <ul class="nav flex-column">
+				               <li class="nav-item">
+				                  <a href="/optimizations/smart-link.html" class="nav-link ">
+				                  <span>Smart Link</span>
+				                  </a>
+				               </li>
+				               <li class="nav-item">
+				                  <a href="/optimizations/subid.html" class="nav-link ">
+				                  <span>SubID Rules</span>
+				                  </a>
+				               </li>
+				               <li class="nav-item">
+				                  <a href="/optimizations/auto-pause.html" class="nav-link ">
+				                  <span>Auto Pause Campaigns</span>
+				                  </a>
+				               </li>
+				               <li class="nav-item">
+				                  <a href="/optimizations/filler-rules.html" class="nav-link ">
+				                  <span>Filler Rules</span>
+				                  </a>
+				               </li>
+				            </ul>
+				         </div>
+				      </li>
+				      <li class="nav-item dropdown">
+				         <a class="nav-link" href="#settings" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="settings">
+				            <span>
+				               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings icon-feather">
+				                  <circle cx="12" cy="12" r="3"></circle>
+				                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+				               </svg>
+				               Settings
+				            </span>
+				         </a>
+				         <div class="collapse show" id="settings" style="">
+				            <ul class="nav flex-column">
+				               <li class="nav-item">
+				                  <a href="/settings/panel.html" class="nav-link ">
+				                  <span>Network</span>
+				                  </a>
+				               </li>
+				               <li class="nav-item">
+				                  <a href="/settings/affiliates.html" class="nav-link ">
+				                  <span>Affiliates</span>
+				                  </a>
+				               </li>
+				               <li class="nav-item">
+				                  <a href="/settings/advertisers.html" class="nav-link ">
+				                  <span>Advertisers</span>
+				                  </a>
+				               </li>
+				            </ul>
+				         </div>
+				      </li>
+				   </ul>
+				</div>
+				<!-- End of Collapse -->
+			</div>
+		</nav>
+
+		<!-- MAIN CONTENT -->
+		<main>
+
+			<!-- HEADER -->
+			<header class="container-fluid d-flex py-6 mb-4">
+			
+				<!-- Search -->
+				<form class="d-none d-md-inline-block me-auto">
+					<div class="input-group input-group-merge">
+			
+						<!-- Input -->
+						<input type="text" class="form-control bg-light-green border-light-green w-250px" placeholder="Search..." aria-label="Search for any term">
+						
+						<!-- Button -->
+						<span class="input-group-text bg-light-green border-light-green p-0">
+			
+							<!-- Button -->
+							<button class="btn btn-primary rounded-2 w-30px h-30px p-0 mx-1" type="button" aria-label="Search button">
+								<svg viewBox="0 0 24 24" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M0.750 9.812 A9.063 9.063 0 1 0 18.876 9.812 A9.063 9.063 0 1 0 0.750 9.812 Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" transform="translate(-3.056 4.62) rotate(-23.025)"  /><path d="M16.221 16.22L23.25 23.25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>
+							</button>
+						</span>
+					  </div>
+				</form>
+			
+				<!-- Top buttons -->
+				<div class="d-flex align-items-center ms-auto me-n1 me-lg-n2">
+			
+					<div class="dropdown">
+						<a href="javascript: void(0);" class="dropdown-toggle no-arrow d-flex align-items-center justify-content-center bg-white rounded-circle shadow-sm mx-1 mx-lg-2 w-40px h-40px" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false" data-bs-offset="0,0">
+							<div class="avatar avatar-circle avatar-sm avatar-online">
+								<img src="{echo Shared\Markup::get_gravatar($user->email)}" alt="..." class="avatar-img" width="40" height="40">
+							</div>
+						</a>
+
+						<div class="dropdown-menu">
+							<div class="dropdown-item-text">
+								<div class="d-flex align-items-center">
+									<div class="flex-grow-1 ms-3">
+										<h4 class="mb-0">Test</h4>
+										<p class="card-text">test@test.com</p>
+									</div>
+								</div>
+							</div>
+
+							<hr class="dropdown-divider">
+							<a class="dropdown-item" href="#">Logout</a>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="container-fluid">
+				<div id="app"></div>
+			</div> <!-- / .container-fluid -->
+
+			<footer class="mt-auto">
+				<div class="container-fluid mt-4 mb-6 text-body-secondary">
+					<div class="row justify-content-between">
+						<div class="col">
+							© TrackOG.
+						</div>
+
+						<div class="col-auto">
+							v1.0.0
+						</div>
+					</div> <!-- / .row -->
+				</div>
+			</footer>
+			
+		</main> <!-- / main -->
+
+		<!-- Theme JS -->
+		<script src="https://storage.googleapis.com/trackog_io/theme/theme.bundle.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.25/daterangepicker.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/UAParser.js/0.7.19/ua-parser.min.js"></script>
+		<script src="https://browser.sentry-cdn.com/4.5.2/bundle.min.js" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-loading-overlay/2.1.6/loadingoverlay.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+		<script type="text/javascript">
+			feather.replace();
+		</script>
+
+		<!-- <script src="http://demo.trackog.xyz/assets/js/admin-3.0.0.min.js?v=1"></script> -->
+		<script type="text/javascript" src="https://storage.googleapis.com/trackog_io/js/sidebar.js?t=v1"></script>
+		<script type="text/javascript" src="https://storage.googleapis.com/trackog_io/js/chart.js?t=v1"></script>
+		<script type="text/javascript" src="https://storage.googleapis.com/trackog_io/js/search.js?t=v1"></script>
+		<script type="text/javascript" src="https://storage.googleapis.com/trackog_io/js/components.js?t=v1"></script>
+		<script type="text/javascript" src="https://storage.googleapis.com/trackog_io/js/request.js?t=v1"></script>
+		<script type="text/javascript" src="https://storage.googleapis.com/trackog_io/js/admin.js?t=v1"></script>
+		<script type="text/javascript" src="https://storage.googleapis.com/trackog_io/js/detect.js?t=v1"></script>
+		<script type="text/javascript" src="https://storage.googleapis.com/trackog_io/js/drawer.js?t=v1"></script>
+		<script type="text/javascript" src="https://storage.googleapis.com/trackog_io/js/util.js?t=v1"></script>
+
+		<script type="module" src="/assets/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+{
+	"name": "frontend",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"watch:build": "chokidar 'src/**/*' -c 'vite build --config vite.config.js'",
+		"build-dev": "vite build --config vite.config.dev.js",
+		"preview": "vite preview",
+		"start": "PORT=8080 node server.js"
+	},
+	"devDependencies": {
+		"@sveltejs/vite-plugin-svelte": "^3.0.1",
+		"chokidar-cli": "^3.0.0",
+		"svelte": "^4.2.7",
+		"vite": "^5.0.8"
+	},
+	"dependencies": {
+		"express": "^4.18.2",
+		"lodash": "^4.17.21",
+		"moment": "^2.30.1",
+		"moment-timezone": "^0.5.48",
+		"svelte-feather-icons": "^4.2.0",
+		"svelte-routing": "^2.13.0",
+		"svelte-spa-router": "^3.3.0"
+	}
+}
